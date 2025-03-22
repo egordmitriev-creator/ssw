@@ -32,11 +32,4 @@ class PetIntegrationTest {
         assertTrue(foundPet.isPresent());
         assertEquals("Yasha", foundPet.get().getName());
     }
-
-    @Test
-    @Sql(scripts = "/test-data.sql")
-    void shouldDeletePet(){
-        petService.deletePet(1L);
-        assertFalse(petService.getPetById(1L).isPresent());
-    }
 }

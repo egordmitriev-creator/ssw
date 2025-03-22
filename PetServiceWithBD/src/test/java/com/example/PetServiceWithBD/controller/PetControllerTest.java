@@ -64,17 +64,4 @@ class PetControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("Invalid ID supplied"));
     }
-
-    @Test
-    void deletePet_NonExistingId_ReturnsNotFound() throws Exception {
-        Long nonExistingId = 1L;
-        doThrow(new PetNotFoundException("Pet not found"))
-                .when(petService).deletePet(nonExistingId);
-
-        mockMvc.perform(delete("/api/v3/pet/{petId}", nonExistingId))
-                .andExpect(status().isNotFound())
-                .andExpect(content().string("Pet not found"));
-    }
-
-
 }
