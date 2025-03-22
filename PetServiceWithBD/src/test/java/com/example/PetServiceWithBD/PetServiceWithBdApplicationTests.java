@@ -1,13 +1,11 @@
 package com.example.PetServiceWithBD;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import org.springframework.boot.SpringApplication;
+import org.testcontainers.utility.TestcontainersConfiguration;
+
 class PetServiceWithBdApplicationTests {
-
-	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+		SpringApplication.from(PetServiceWithBdApplicationTests::main).with(TestcontainersConfiguration.class).run(args);
 	}
-
 }

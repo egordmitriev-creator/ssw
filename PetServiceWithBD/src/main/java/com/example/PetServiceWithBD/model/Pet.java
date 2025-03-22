@@ -1,11 +1,29 @@
 package com.example.PetServiceWithBD.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
+@Table(name = "pets")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Pet {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "pet_tags",
+            joinColumns = @JoinColumn(name = "pet_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
     private List<Tag> tags;
     private String status;
 
