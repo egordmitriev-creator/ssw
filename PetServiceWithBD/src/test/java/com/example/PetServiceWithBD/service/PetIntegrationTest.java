@@ -1,6 +1,7 @@
 package com.example.PetServiceWithBD.service;
 
 import com.example.PetServiceWithBD.TestContainerConfiguration;
+import com.example.PetServiceWithBD.exception.PetNotFoundException;
 import com.example.PetServiceWithBD.model.Pet;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
@@ -31,5 +32,15 @@ class PetIntegrationTest {
 
         assertTrue(foundPet.isPresent());
         assertEquals("Yasha", foundPet.get().getName());
+    }
+
+    @Test
+    @Sql(scripts = "/test-data.sql")
+    void shouldDeletePet() {
+        Optional<Pet> petBeforeDelete = petService.getPetById(1L);
+        assertTrue(petBeforeDelete.isPresent(), "Pet should exist before deletion");
+        petService.deletePet(1L);
+        assertThrows(PetNotFoundException.class, () -> petService.getPetById(1L),
+                "Pet should not be found after deletion");
     }
 }
