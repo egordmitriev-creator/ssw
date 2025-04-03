@@ -1,17 +1,11 @@
 package io.swagger.model;
 
-import org.hibernate.annotations.Type;
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.OffsetDateTime;
 import org.springframework.validation.annotation.Validated;
-import org.openapitools.jackson.nullable.JsonNullable;
 import io.swagger.configuration.NotUndefined;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import com.fasterxml.jackson.annotation.Nulls;
+
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -30,26 +24,6 @@ import javax.validation.constraints.*;
 
 
 public class Comment   {
-//  @JsonProperty("id")
-//
-//  @JsonInclude(JsonInclude.Include.NON_ABSENT)  // Exclude from JSON if absent
-//  @JsonSetter(nulls = Nulls.FAIL)    // FAIL setting if the value is null
-//  private Long id = null;
-//
-//  @JsonProperty("postId")
-//
-//  private Long postId = null;
-//
-//  @JsonProperty("content")
-//
-//  private String content = null;
-//
-//  @JsonProperty("postDate")
-//
-//  @JsonInclude(JsonInclude.Include.NON_ABSENT)  // Exclude from JSON if absent
-//  @JsonSetter(nulls = Nulls.FAIL)    // FAIL setting if the value is null
-//  private OffsetDateTime postDate = null;
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
