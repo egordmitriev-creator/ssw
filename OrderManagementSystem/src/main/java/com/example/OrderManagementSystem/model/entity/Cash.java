@@ -1,12 +1,14 @@
 package com.example.OrderManagementSystem.model.entity;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.Data;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
-@DiscriminatorValue("CASH")
+@Getter
+@Setter
+@Table(name = "cash_payments")
 public class Cash extends Payment {
-    private float cashTendered;
+    private float cashAmount;
 }

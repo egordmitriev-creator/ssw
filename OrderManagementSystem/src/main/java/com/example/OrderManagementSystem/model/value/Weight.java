@@ -1,15 +1,16 @@
 package com.example.OrderManagementSystem.model.value;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Embedded;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Data
 @Embeddable
-public class Weight {
+@Getter
+@Setter
+public class Weight implements Measurement {
     private BigDecimal value;
-    @Embedded
-    private Measurement measurement;
+    private String name;
+    private String symbol;
 }

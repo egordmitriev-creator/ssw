@@ -2,23 +2,17 @@ package com.example.OrderManagementSystem.model.entity;
 
 import com.example.OrderManagementSystem.model.value.Quantity;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-@Data
+@Embeddable
+@Getter
+@Setter
 public class OrderDetail {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Embedded
     private Quantity quantity;
 
-    private String taxStatus;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "item_id")
