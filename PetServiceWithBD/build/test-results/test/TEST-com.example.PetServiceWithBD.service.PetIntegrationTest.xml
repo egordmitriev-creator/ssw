@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.PetServiceWithBD.service.PetIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-04-07T09:35:27" hostname="MacBook-Air-Egor.local" time="0.433">
+  <properties/>
+  <testcase name="shouldDeletePet()" classname="com.example.PetServiceWithBD.service.PetIntegrationTest" time="0.403"/>
+  <testcase name="shouldSaveAndRetrievePet()" classname="com.example.PetServiceWithBD.service.PetIntegrationTest" time="0.029"/>
+  <system-out><![CDATA[16:35:20.694 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.PetServiceWithBD.service.PetIntegrationTest]: PetIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:35:20.774 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.PetServiceWithBD.PetServiceWithBdApplication for test class com.example.PetServiceWithBD.service.PetIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-04-07T16:35:20.985+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] c.e.P.service.PetIntegrationTest         : Starting PetIntegrationTest using Java 23.0.2 with PID 18536 (started by egordmitriev in /Users/egordmitriev/Desktop/sibsutis/3_course/DSS/ssw/PetServiceWithBD)
+2025-04-07T16:35:20.986+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] c.e.P.service.PetIntegrationTest         : No active profile set, falling back to 1 default profile: "default"
+2025-04-07T16:35:21.288+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-07T16:35:21.314+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-04-07T16:35:21.485+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2025-04-07T16:35:21.486+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-04-07T16:35:21.498+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.20.5
+2025-04-07T16:35:21.590+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-04-07T16:35:21.706+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with Docker accessed via Unix socket (/Users/egordmitriev/.docker/run/docker.sock)
+2025-04-07T16:35:21.707+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2025-04-07T16:35:21.712+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 28.0.1
+  API Version: 1.48
+  Operating System: Docker Desktop
+  Total Memory: 3919 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/egordmitriev/Library/Containers/com.docker.docker/Data/docker-cli.sock
+2025-04-07T16:35:21.721+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Creating container for image: testcontainers/ryuk:0.11.0
+2025-04-07T16:35:22.083+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2025-04-07T16:35:24.286+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 is starting: a2b35bf50ee80153fbf29fa4ac067a5c7ca229cb730535c469a52058f8deea46
+2025-04-07T16:35:24.586+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.testcontainers/ryuk:0.11.0            : Container testcontainers/ryuk:0.11.0 started in PT2.865131S
+2025-04-07T16:35:24.592+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-04-07T16:35:24.592+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2025-04-07T16:35:24.593+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2025-04-07T16:35:24.594+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.postgres:15                           : Creating container for image: postgres:15
+2025-04-07T16:35:24.636+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.postgres:15                           : Container postgres:15 is starting: ab502eaf131851f644b05d24a4a954f9313592af5bfb9e4e7a46ad01c4c0bf04
+2025-04-07T16:35:25.630+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.postgres:15                           : Container postgres:15 started in PT1.036726S
+2025-04-07T16:35:25.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] tc.postgres:15                           : Container is started (JDBC URL: jdbc:postgresql://localhost:49379/testdb?loggerLevel=OFF)
+2025-04-07T16:35:26.315+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.database                       : Set default schema name to public
+2025-04-07T16:35:26.520+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2025-04-07T16:35:26.538+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-04-07T16:35:26.588+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.lockservice                    : Successfully acquired change log lock
+2025-04-07T16:35:26.589+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.command                        : Using deploymentId: 4018526589
+2025-04-07T16:35:26.591+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Reading from public.databasechangelog
+2025-04-07T16:35:26.603+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::create-tables::you
+2025-04-07T16:35:26.610+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Table categories created
+2025-04-07T16:35:26.613+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Table tags created
+2025-04-07T16:35:26.616+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Table pets created
+2025-04-07T16:35:26.618+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : Table pet_tags created
+2025-04-07T16:35:26.619+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::create-tables::you ran successfully in 16ms
+2025-04-07T16:35:26.630+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : UPDATE SUMMARY
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : Run:                          1
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : Previously run:               0
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : Filtered out:                 0
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : -------------------------------
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : Total change sets:            1
+2025-04-07T16:35:26.631+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.util                           : Update summary generated
+2025-04-07T16:35:26.633+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.command                        : Update command completed successfully.
+2025-04-07T16:35:26.633+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 1
+2025-04-07T16:35:26.637+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.lockservice                    : Successfully released change log lock
+2025-04-07T16:35:26.638+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] liquibase.command                        : Command execution complete
+2025-04-07T16:35:26.686+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-07T16:35:26.715+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-04-07T16:35:26.731+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-07T16:35:26.871+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-07T16:35:26.886+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-07T16:35:26.935+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a7bd9a8
+2025-04-07T16:35:26.936+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-07T16:35:26.977+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.12
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-07T16:35:27.410+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-07T16:35:27.431+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-07T16:35:27.645+07:00  WARN 18536 --- [PetServiceWithBD] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07T16:35:27.861+07:00  INFO 18536 --- [PetServiceWithBD] [    Test worker] c.e.P.service.PetIntegrationTest         : Started PetIntegrationTest in 7.02 seconds (process running for 7.679)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/egordmitriev/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
